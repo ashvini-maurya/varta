@@ -2,10 +2,10 @@ import React from 'react';
 
 import './sentence.css'
 
-const Sentence = () => {
+const Sentence = (props) => {
     return (<div className="sentence">
         <p>
-            Winter is coming
+            {props.text}
         </p>
     </div>);
 };

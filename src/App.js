@@ -14,9 +14,9 @@ class App extends Component {
           <h2>Pick the words in order</h2>
         </div>
 
-        <Sentence />
+        <Sentence text="Winter is coming" />
         <Answer />
-        <Option />
+        <Option text="Winter is coming" />
       </div>
     );
   }
