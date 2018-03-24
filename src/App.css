@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.heading {
+  border: 2px solid grey;
+  width: 50%;
+  margin: auto;
+}
