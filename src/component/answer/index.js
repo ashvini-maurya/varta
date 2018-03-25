@@ -2,10 +2,10 @@ import React from 'react';
 
 import './answer.css'
 
-const Answer = () => {
+const Answer = (props) => {
     return (<div className="answer">
         <p>
-            Answer Component
+            {props.answer}
         </p>
     </div>);
 };
