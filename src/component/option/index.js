@@ -22,7 +22,6 @@ import './option.css'
 // };
 
 function OptionList(props) {
-    console.log(props.option);
     return (
         <div className="option">
             {props.option.map((w, i) => <button onClick={() => props.optionClicked(w,i)}> {w} </button>)}

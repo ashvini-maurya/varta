@@ -10,7 +10,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      sentence: 'Winter is coming',
+      sentence: 'Winter is coming ',
       answer: '',
       option: ["Winter", "is", "coming"]
     };
@@ -18,9 +18,16 @@ class App extends Component {
     // this.optionClick = this.optionClick.bind(this);
   }
 
-  // optionClick(event){
-  //   console.log("inside optionClick");
-  // }
+  optionClick(event){
+    this.setState({answer: this.state.answer.concat(event + " "), option: this.state.option.filter(item => item !== event) }, () => {
+      if((this.state.option).length === 0 && this.state.sentence === this.state.answer) {
+        console.log("correct");
+      } else {
+        console.log("incorrect");
+      }
+      
+    });
+  }
 
   render() {
     return (
@@ -31,7 +38,7 @@ class App extends Component {
 
         <Sentence text={this.state.sentence} />
         <Answer answer={this.state.answer} />
-        <Option option={this.state.option} optionClicked={(arg,index) => console.log(arg + index) }/>
+        <Option option={this.state.option} optionClicked={this.optionClick.bind(this)}/>
       </div>
     );
   }
