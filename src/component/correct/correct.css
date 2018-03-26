@@ -1,0 +1,18 @@
+.correct {
+    border: 2px solid grey;
+    width: 50%;
+    margin: auto;
+    height: 50px;
+    margin-top: -55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.correct-msg {
+    background-color: green;
+    padding: 10px;
+    color: white;
+    width: 40%;
+}

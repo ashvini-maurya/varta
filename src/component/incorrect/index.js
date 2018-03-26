@@ -1,11 +1,11 @@
 import React from 'react';
+import './incorrect.css';
 
 const Incorrect = (props) => {
-    console.log(props);
     return (<div className="incorrect">
-        <p>
+        <div className="incorrect-msg">
             Incorrect
-        </p>
+        </div>
     </div>);
 };
 

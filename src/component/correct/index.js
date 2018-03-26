@@ -1,13 +1,11 @@
 import React from 'react';
+import './correct.css';
 
 const Correct = (props) => {
-    console.log(props);
-    // if (!this.state.correct) return;
-
     return (<div className="correct">
-        <p>
+        <div className="correct-msg">
             Correct
-        </p>
+        </div>
     </div>);
 };
 
