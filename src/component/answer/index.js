@@ -1,6 +1,5 @@
 import React from 'react';
-
-import './answer.css'
+import './answer.css';
 
 const Answer = (props) => {
     return (<div className="answer">
@@ -10,4 +9,4 @@ const Answer = (props) => {
     </div>);
 };
 
-export default Answer
+export default Answer;

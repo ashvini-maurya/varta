@@ -10,4 +10,4 @@ const Incorrect = (props) => {
 };
 
 
-export default Incorrect
+export default Incorrect;

@@ -10,4 +10,4 @@ const Correct = (props) => {
 };
 
 
-export default Correct
+export default Correct;

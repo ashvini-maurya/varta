@@ -1,6 +1,5 @@
 import React from 'react';
-
-import './sentence.css'
+import './sentence.css';
 
 const Sentence = (props) => {
     return (<div className="sentence">
@@ -10,4 +9,4 @@ const Sentence = (props) => {
     </div>);
 };
 
-export default Sentence
+export default Sentence;

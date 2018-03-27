@@ -7,13 +7,13 @@ import Answer from './component/answer';
 import Correct from './component/correct';
 import Incorrect from './component/incorrect';
 
-// randomizing option list
+// randomizing option
 const sentenceShuffleArr = arr => (
   arr
     .map(a => [Math.random(), a])
     .sort((a, b) => a[0] - b[0])
     .map(a => a[1])
-)
+);
 
 class App extends Component {
   constructor(props) {
@@ -25,8 +25,6 @@ class App extends Component {
       option: sentenceShuffleArr(["Winter", "is", "coming"]),
       correct: true,
     };
-
-    // this.optionClick = this.optionClick.bind(this);
   }
 
   optionClick(event) {
