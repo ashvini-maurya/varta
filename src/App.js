@@ -31,20 +31,20 @@ class App extends Component {
     this.setState({ 
       answer: this.state.answer.concat(event + " "), 
       option: this.state.option.filter(item => item !== event) }, () => {
-        if ((this.state.option).length === 0 && this.state.sentence === this.state.answer) {
-          this.setState({
-            correct: true,
-          })
-        } else {
-          this.setState({
-            correct: false,
-          })
-        }
+      if ((this.state.option).length === 0 && this.state.sentence === this.state.answer) {
+        this.setState({
+          correct: true,
+        })
+      } else {
+        this.setState({
+          correct: false,
+        })
+      }
     });
   }
 
   render() {
-    return (this.state.option.length > 0) ? (
+    return (
       <div className="App">
         <div className="heading">
           <h2>Pick the words in order</h2>
@@ -52,17 +52,8 @@ class App extends Component {
         <Sentence text={this.state.sentence} />
         <Answer answer={this.state.answer} />
         <Option option={this.state.option} optionClicked={this.optionClick.bind(this)} />
-      </div>
-    ) : (
-      <div className="App">
-        <div className="heading">
-          <h2>Pick the words in order</h2>
-        </div>
-        <Sentence text={this.state.sentence} />
-        <Answer answer={this.state.answer} />
-        <Option option={this.state.option} optionClicked={this.optionClick.bind(this)} />
-        {this.state.correct && <Correct />}
-        {!this.state.correct && <Incorrect />}
+        {this.state.option.length === 0 && this.state.correct && <Correct />}
+        {this.state.option.length === 0 && !this.state.correct && <Incorrect />}   
       </div>
     )
   }
