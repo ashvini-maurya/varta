@@ -1,4 +1,4 @@
-.correct {
+.result {
     border: 2px solid grey;
     width: 40%;
     margin: auto;
@@ -11,6 +11,13 @@
 
 .correct-msg {
     background-color: #0e9577;
+    padding: 10px;
+    color: white;
+    width: 40%;
+}
+
+.incorrect-msg {
+    background-color:#dd3e3e;
     padding: 10px;
     color: white;
     width: 40%;

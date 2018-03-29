@@ -4,8 +4,7 @@ import './App.css';
 import Option from './component/option';
 import Sentence from './component/sentence';
 import Answer from './component/answer';
-import Correct from './component/correct';
-import Incorrect from './component/incorrect';
+import Result from './component/result';
 
 // randomizing option
 const sentenceShuffleArr = arr => (
@@ -23,7 +22,7 @@ class App extends Component {
       sentence: 'Winter is coming ',
       answer: '',
       option: sentenceShuffleArr(["Winter", "is", "coming"]),
-      correct: true,
+      result: true,
     };
   }
 
@@ -33,11 +32,11 @@ class App extends Component {
       option: this.state.option.filter(item => item !== event) }, () => {
       if ((this.state.option).length === 0 && this.state.sentence === this.state.answer) {
         this.setState({
-          correct: true,
+          result: true,
         })
       } else {
         this.setState({
-          correct: false,
+          result: false,
         })
       }
     });
@@ -52,8 +51,8 @@ class App extends Component {
         <Sentence text={this.state.sentence} />
         <Answer answer={this.state.answer} />
         <Option option={this.state.option} optionClicked={this.optionClick.bind(this)} />
-        {this.state.option.length === 0 && this.state.correct && <Correct />}
-        {this.state.option.length === 0 && !this.state.correct && <Incorrect />}   
+        {this.state.option.length === 0 && this.state.result && <Result result={this.state.result} />} 
+        {this.state.option.length === 0 && !this.state.result && <Result result={this.state.result} />}  
       </div>
     )
   }
