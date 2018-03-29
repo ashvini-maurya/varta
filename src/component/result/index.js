@@ -2,7 +2,6 @@ import React from 'react';
 import './result.css';
 
 const Result = (props) => {
-    console.log(props.result);
     if (props.result) {
         return (<div className="result">
             <div className="correct-msg">

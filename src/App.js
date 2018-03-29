@@ -51,8 +51,7 @@ class App extends Component {
         <Sentence text={this.state.sentence} />
         <Answer answer={this.state.answer} />
         <Option option={this.state.option} optionClicked={this.optionClick.bind(this)} />
-        {this.state.option.length === 0 && this.state.result && <Result result={this.state.result} />} 
-        {this.state.option.length === 0 && !this.state.result && <Result result={this.state.result} />}  
+        {this.state.option.length === 0 && <Result result={this.state.result} />} 
       </div>
     )
   }
