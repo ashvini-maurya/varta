@@ -28,17 +28,7 @@ class App extends Component {
   optionClick(event) {
     this.setState({ 
       answer: this.state.answer.concat(event + " "), 
-      option: this.state.option.filter(item => item !== event) }, () => {
-      if ((this.state.option).length === 0 && this.state.sentence === this.state.answer) {
-        this.setState({
-          result: true,
-        })
-      } else {
-        this.setState({
-          result: false,
-        })
-      }
-    });
+      option: this.state.option.filter(item => item !== event) });
   }
 
   render() {
@@ -50,7 +40,7 @@ class App extends Component {
         <SentenceAnswer sentence={this.state.sentence} />
         <SentenceAnswer answer={this.state.answer} />
         <Option option={this.state.option} optionClicked={this.optionClick.bind(this)} />
-        {this.state.option.length === 0 && <Result result={this.state.result} />} 
+        {this.state.option.length === 0 && <Result result={this.state.sentence === this.state.answer} />} 
       </div>
     )
   }
