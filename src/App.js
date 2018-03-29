@@ -5,22 +5,25 @@ import Option from './component/option';
 import Result from './component/result';
 import SentenceAnswer from './component/sentenceAnswer';
 
-// randomizing option
-const sentenceShuffleArr = arr => (
-  arr
-    .map(a => [Math.random(), a])
-    .sort((a, b) => a[0] - b[0])
-    .map(a => a[1])
-);
+// randomize
+function randomize(listSentence){
+  let randomSentenceList = listSentence
+      .map(a => [Math.random(), a])
+      .sort((a, b) => a[0] - b[0])
+      .map(a => a[1])
+  return randomSentenceList;
+}
+
+var sentences = randomize(['The Final Empire ', 'The Old Man and the Sea ', 'Turtles All the Way Down ', 'When Breath Becomes Air ', 'The Last Lecture ', 'Train to Pakistan ', 'Sapiens: A Brief History of Humankind ']);
+var splitSentence = sentences[0].split(" ").filter(item => item.trim() !== '');
 
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      sentence: 'Winter is coming ',
+      sentence: sentences[0],
       answer: '',
-      option: sentenceShuffleArr(["Winter", "is", "coming"]),
+      option: randomize(splitSentence),
       result: true,
     };
   }
