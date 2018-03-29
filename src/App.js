@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Option from './component/option';
-import Sentence from './component/sentence';
-import Answer from './component/answer';
 import Result from './component/result';
+import SentenceAnswer from './component/sentenceAnswer';
 
 // randomizing option
 const sentenceShuffleArr = arr => (
@@ -48,8 +47,8 @@ class App extends Component {
         <div className="heading">
           <h2>Pick the words in order</h2>
         </div>
-        <Sentence text={this.state.sentence} />
-        <Answer answer={this.state.answer} />
+        <SentenceAnswer sentence={this.state.sentence} />
+        <SentenceAnswer answer={this.state.answer} />
         <Option option={this.state.option} optionClicked={this.optionClick.bind(this)} />
         {this.state.option.length === 0 && <Result result={this.state.result} />} 
       </div>
