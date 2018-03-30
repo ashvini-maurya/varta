@@ -6,16 +6,16 @@ import Result from './component/result';
 import SentenceAnswer from './component/sentenceAnswer';
 
 // randomize
-function randomize(listSentence){
-  let randomSentenceList = listSentence
-      .map(a => [Math.random(), a])
-      .sort((a, b) => a[0] - b[0])
-      .map(a => a[1])
+function randomize(listSentence) {
+  const randomSentenceList = listSentence
+    .map(a => [Math.random(), a])
+    .sort((a, b) => a[0] - b[0])
+    .map(a => a[1]);
   return randomSentenceList;
 }
 
-var sentences = randomize(['The Final Empire ', 'The Old Man and the Sea ', 'Turtles All the Way Down ', 'When Breath Becomes Air ', 'The Last Lecture ', 'Train to Pakistan ', 'Sapiens: A Brief History of Humankind ']);
-var splitSentence = sentences[0].split(" ").filter(item => item.trim() !== '');
+const sentences = randomize(['The Final Empire ', 'The Old Man and the Sea ', 'Turtles All the Way Down ', 'When Breath Becomes Air ', 'The Last Lecture ', 'Train to Pakistan ', 'Sapiens: A Brief History of Humankind ']);
+const splitSentence = sentences[0].split(' ').filter(item => item.trim() !== '');
 
 class App extends Component {
   constructor(props) {
@@ -24,14 +24,15 @@ class App extends Component {
       sentence: sentences[0],
       answer: '',
       option: randomize(splitSentence),
-      result: true,
+      // result: true,
     };
   }
 
   optionClick(event) {
-    this.setState({ 
-      answer: this.state.answer.concat(event + " "), 
-      option: this.state.option.filter(item => item !== event) });
+    this.setState({
+      answer: this.state.answer.concat(event + ' '),
+      option: this.state.option.filter(item => item !== event),
+    });
   }
 
   render() {
@@ -43,9 +44,10 @@ class App extends Component {
         <SentenceAnswer sentence={this.state.sentence} />
         <SentenceAnswer answer={this.state.answer} />
         <Option option={this.state.option} optionClicked={this.optionClick.bind(this)} />
-        {this.state.option.length === 0 && <Result result={this.state.sentence === this.state.answer} />} 
+        {this.state.option.length === 0 &&
+          <Result result={this.state.sentence === this.state.answer} />}
       </div>
-    )
+    );
   }
 }
 
